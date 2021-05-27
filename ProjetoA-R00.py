@@ -8,11 +8,12 @@ caminho = ""
 while (not terminou):
 
     print("Organizador Automatico de Arquivos")
+    print("")
     print("1. Renomear arquivos conforme ano e quantidade escolhida.")
     print("2. Criar novas subpastas divididas por ano.")
     print("3. Mover arquivos entre pasta pricipal e subpastas")
 
-    caso = int(input("Escolha um dos os casos acima (Digite apenas o numero do caso escolhido): "))
+    caso = int(input(""))
 
     log.basicConfig(filename="Diario_Execução_Proj-A.log", level=log.INFO, format="%(asctime)s %(levelname)s %(funcName)s => %(message)s")
    
@@ -37,7 +38,7 @@ while (not terminou):
             
             log.info("Renomeou os arquivos em: " + fonte)
         
-        resposta = input("Deseja continuar? (s para sim e n para não) ")
+        resposta = input("Deseja continuar? (s) ou (n) ")
         if resposta == "n" or resposta == "N":
             terminou = True
              
@@ -49,7 +50,7 @@ while (not terminou):
             os.mkdir(caminho_novas_pastas)
             log.info("Criou pasta em: " + caminho_novas_pastas)
             
-        resposta = input("Deseja continuar? (s para sim e n para não) ")
+        resposta = input("Deseja continuar? (s) ou (n) ")
         if resposta == "n" or resposta == "N":
             terminou = True
         
@@ -63,6 +64,6 @@ while (not terminou):
                 shutil.move (origem, destino)
                 log.info("Moveu arquivos para: " + destino)     
                 
-        resposta = input("Deseja continuar? (s para sim e n para não) ")
-   if resposta == "n" or resposta == "N":
-   terminou = True
+        resposta = input("Deseja continuar? (s) ou (n) ")
+        if resposta == "n" or resposta == "N":
+            terminou = True
